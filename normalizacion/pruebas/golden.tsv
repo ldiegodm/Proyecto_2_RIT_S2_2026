@@ -1,0 +1,64 @@
+# Casos de prueba de la normalizacion (golden). Ambas implementaciones deben producir exactamente
+# la columna 'esperado' (terminos separados por un espacio). En 'entrada', \n es un salto de linea.
+# Generado con herramientas/generar_golden.py desde pruebas/casos.txt y revisado a mano.
+perfil	entrada	esperado
+p1_base	NFKC: the ﬁrst ﬂying reptile ﬁssure	nfkc first flying reptile fissure
+p2_stemming	NFKC: the ﬁrst ﬂying reptile ﬁssure	nfkc first fli reptil fissur
+p3_completo	NFKC: the ﬁrst ﬂying reptile ﬁssure	nfkc first fly reptile fissure
+p1_base	Typographic quotes: the dinosaur’s ‘skull’ wasn’t found	typographic quotes dinosaur skull wasnt found
+p2_stemming	Typographic quotes: the dinosaur’s ‘skull’ wasn’t found	typograph quot dinosaur skull found
+p3_completo	Typographic quotes: the dinosaur’s ‘skull’ wasn’t found	typographic quote dinosaur skull find
+p1_base	PDF line break: fos-\nsils were pre-  \n  served in sedi-\nment	pdf line break fossils were preserved sediment
+p2_stemming	PDF line break: fos-\nsils were pre-  \n  served in sedi-\nment	pdf line break fossil preserv sediment
+p3_completo	PDF line break: fos-\nsils were pre-  \n  served in sedi-\nment	pdf line break fossil preserve sediment
+p1_base	Diacritics: Café, Ñandú, Æsir, straße, Łódź, naïve, Pokémon	diacritics cafe nandu aesir strasse lodz naive pokemon
+p2_stemming	Diacritics: Café, Ñandú, Æsir, straße, Łódź, naïve, Pokémon	diacrit cafe nandu aesir strass lodz naiv pokemon
+p3_completo	Diacritics: Café, Ñandú, Æsir, straße, Łódź, naïve, Pokémon	diacritic cafe nandu aesir strasse lodz naive pokemon
+p1_base	Possessive and contractions: the T. rex's teeth; they're sure it's Sue's skull; don't	possessive contractions rex teeth theyre sure sue skull dont
+p2_stemming	Possessive and contractions: the T. rex's teeth; they're sure it's Sue's skull; don't	possess contract rex teeth sure sue skull
+p3_completo	Possessive and contractions: the T. rex's teeth; they're sure it's Sue's skull; don't	possessive contraction tyrannosaurus_rex tooth sure sue skull
+p1_base	Tokenizer: 2.5cm long, version 1.2.3, fig.2, under_score, email@site.org, C++ and 3.14159	tokenizer 2.5cm long version 1.2.3 fig under_score email site org 3.14159
+p2_stemming	Tokenizer: 2.5cm long, version 1.2.3, fig.2, under_score, email@site.org, C++ and 3.14159	token 2.5cm long version 1.2.3 fig under_score email site org 3.14159
+p3_completo	Tokenizer: 2.5cm long, version 1.2.3, fig.2, under_score, email@site.org, C++ and 3.14159	tokenizer 2.5cm long version 1.2.3 fig under_score email site org 3.14159
+p1_base	Length: a b c dd x-ray I O	length dd ray
+p2_stemming	Length: a b c dd x-ray I O	length dd ray
+p3_completo	Length: a b c dd x-ray I O	length dd ray
+p1_base	Numbers: 1,500,000 bones and 66,000 years, 1,2,3 and 12,34	numbers 500 000 bones 66 000 years 12 34
+p2_stemming	Numbers: 1,500,000 bones and 66,000 years, 1,2,3 and 12,34	number 1500000 bone 66000 year 12 34
+p3_completo	Numbers: 1,500,000 bones and 66,000 years, 1,2,3 and 12,34	number 1500000 bone 66000 year 12 34
+p1_base	Stopwords: The fossils of these animals are in the museum and they will be there	stopwords fossils animals museum
+p2_stemming	Stopwords: The fossils of these animals are in the museum and they will be there	stopword fossil anim museum will
+p3_completo	Stopwords: The fossils of these animals are in the museum and they will be there	stopwords fossil animal museum will
+p1_base	Calendar dates: On 19 November 2026, on March 3rd, 1999, on 2020-02-03, in Sept. 2021 and in May 2010	calendar dates 19 november 2026 march 3rd 1999 2020 02 03 sept 2021 may 2010
+p2_stemming	Calendar dates: On 19 November 2026, on March 3rd, 1999, on 2020-02-03, in Sept. 2021 and in May 2010	calendar date 19 novemb 2026 march 3rd 1999 2020 02 03 sept 2021 may 2010
+p3_completo	Calendar dates: On 19 November 2026, on March 3rd, 1999, on 2020-02-03, in Sept. 2021 and in May 2010	calendar date 20261119 19990303 20200203 202109 201005
+p1_base	Invalid dates: 2020-13-45 and 32 march 2020 and may be 2020	invalid dates 2020 13 45 32 march 2020 may 2020
+p2_stemming	Invalid dates: 2020-13-45 and 32 march 2020 and may be 2020	invalid date 2020 13 45 32 march 2020 may 2020
+p3_completo	Invalid dates: 2020-13-45 and 32 march 2020 and may be 2020	invalid date 2020 13 45 32 202003 may 2020
+p1_base	Geologic time: 66 million years ago, 66 Ma, 66mya, 145.5 million-year-old, 4.5 billion years old, 4.5 Ga, 12 thousand years ago, 12 ka	geologic time 66 million years ago 66 ma 66mya 145.5 million year old 4.5 billion years old 4.5 ga 12 thousand years ago 12 ka
+p2_stemming	Geologic time: 66 million years ago, 66 Ma, 66mya, 145.5 million-year-old, 4.5 billion years old, 4.5 Ga, 12 thousand years ago, 12 ka	geolog time 66 million year ago 66 ma 66mya 145.5 million year old 4.5 billion year old 4.5 ga 12 thousand year ago 12 ka
+p3_completo	Geologic time: 66 million years ago, 66 Ma, 66mya, 145.5 million-year-old, 4.5 billion years old, 4.5 Ga, 12 thousand years ago, 12 ka	geologic time 66ma 66ma 66ma 145.5ma 4.5ga 4.5ga 12ka 12ka
+p1_base	Geologic false positives: 6 million people and 3 million dollars; mama; 10 maps	geologic false positives million people million dollars mama 10 maps
+p2_stemming	Geologic false positives: 6 million people and 3 million dollars; mama; 10 maps	geolog fals posit million peopl million dollar mama 10 map
+p3_completo	Geologic false positives: 6 million people and 3 million dollars; mama; 10 maps	geologic false positive million people million dollar mama 10 map
+p1_base	Multiword: T. rex, T.rex, Tyrannosaurus  rex, T-rex and trex; the K–Pg boundary; K/T; Cretaceous–Paleogene extinction	multiword rex rex tyrannosaurus rex rex trex pg boundary cretaceous paleogene extinction
+p2_stemming	Multiword: T. rex, T.rex, Tyrannosaurus  rex, T-rex and trex; the K–Pg boundary; K/T; Cretaceous–Paleogene extinction	multiword rex rex tyrannosaurus rex rex trex pg boundari cretac paleogen extinct
+p3_completo	Multiword: T. rex, T.rex, Tyrannosaurus  rex, T-rex and trex; the K–Pg boundary; K/T; Cretaceous–Paleogene extinction	multiword tyrannosaurus_rex tyrannosaurus_rex tyrannosaurus_rex tyrannosaurus_rex tyrannosaurus_rex kpg kpg kpg extinction
+p1_base	Multiword boundaries: atrex, at rex, mass extinctions, non-avian dinosaurs, a natural history museum	multiword boundaries atrex rex mass extinctions non avian dinosaurs natural history museum
+p2_stemming	Multiword boundaries: atrex, at rex, mass extinctions, non-avian dinosaurs, a natural history museum	multiword boundari atrex rex mass extinct non avian dinosaur natur histori museum
+p3_completo	Multiword boundaries: atrex, at rex, mass extinctions, non-avian dinosaurs, a natural history museum	multiword boundary atrex rex mass_extinction non_avian dinosaur natural_history_museum
+p1_base	Thesaurus: palaeontologists study colour, behaviour and moulds of dinos in the Palaeozoic	thesaurus palaeontologists study colour behaviour moulds dinos palaeozoic
+p2_stemming	Thesaurus: palaeontologists study colour, behaviour and moulds of dinos in the Palaeozoic	thesaurus palaeontologist studi colour behaviour mould dino palaeozo
+p3_completo	Thesaurus: palaeontologists study colour, behaviour and moulds of dinos in the Palaeozoic	thesaurus paleontologist study color behavior mold dinosaur paleozoic
+p1_base	School terms: bird-hipped and lizard-hipped, plant-eating and meat-eaters	school terms bird hipped lizard hipped plant eating meat eaters
+p2_stemming	School terms: bird-hipped and lizard-hipped, plant-eating and meat-eaters	school term bird hip lizard hip plant eat meat eater
+p3_completo	School terms: bird-hipped and lizard-hipped, plant-eating and meat-eaters	school term ornithischian saurischian herbivorous carnivore
+p1_base	Protected genera: Triceratops, Iguanodon, Velociraptor, Archaeopteryx, Stegosaurus, Pachycephalosaurus	protected genera triceratops iguanodon velociraptor archaeopteryx stegosaurus pachycephalosaurus
+p2_stemming	Protected genera: Triceratops, Iguanodon, Velociraptor, Archaeopteryx, Stegosaurus, Pachycephalosaurus	protect genera triceratops iguanodon velociraptor archaeopteryx stegosaurus pachycephalosaurus
+p3_completo	Protected genera: Triceratops, Iguanodon, Velociraptor, Archaeopteryx, Stegosaurus, Pachycephalosaurus	protect genus triceratops iguanodon velociraptor archaeopteryx stegosaurus pachycephalosaurus
+p1_base	Stemming and lemmas: fossils fossilized fossilization bones teeth mice lived living species studies evolved feathers	stemming lemmas fossils fossilized fossilization bones teeth mice lived living species studies evolved feathers
+p2_stemming	Stemming and lemmas: fossils fossilized fossilization bones teeth mice lived living species studies evolved feathers	stem lemma fossil fossil fossil bone teeth mice live live speci studi evolv feather
+p3_completo	Stemming and lemmas: fossils fossilized fossilization bones teeth mice lived living species studies evolved feathers	stem lemma fossil fossilize fossilization bone tooth mouse live live species study evolve feather
+p1_base	Irregular forms: found ran saw left better geese children feet	irregular forms found ran saw left better geese children feet
+p2_stemming	Irregular forms: found ran saw left better geese children feet	irregular form found ran saw left better gees children feet
+p3_completo	Irregular forms: found ran saw left better geese children feet	irregular form find run see leave good goose child foot

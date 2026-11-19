@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+
+# Java / Gradle
+.gradle/
+build/
+!normalizacion/java/gradle/wrapper/gradle-wrapper.jar
+
+# Muestra generada desde los fixtures del proyecto 1 (herramientas/extraer_muestra.py)
+normalizacion/pruebas/muestra/
+
+# Datos de la coleccion e indices generados (pesan; van en el tar.gz, no en git)
+datos/
+indices/

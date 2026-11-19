@@ -1,0 +1,43 @@
+// Normalizacion de PaleoBusca para Apache Lucene: PaleoAnalyzer implementa la misma
+// especificacion que el paquete Python paleonorm (ver ../ESPECIFICACION.md).
+plugins {
+    id 'java-library'
+    id 'application'
+}
+
+group = 'paleobusca'
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+def luceneVersion = findProperty('luceneVersion') ?: '9.12.1'
+
+dependencies {
+    api "org.apache.lucene:lucene-core:${luceneVersion}"
+    api "org.apache.lucene:lucene-analysis-common:${luceneVersion}"
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.11.4'
+    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.11.4'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+application {
+    mainClass = 'paleobusca.normalizacion.Tokenizar'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+test {
+    useJUnitPlatform()
+    systemProperty 'normalizacion.dir', file('..').absolutePath
+    testLogging { events 'failed'; exceptionFormat 'full' }
+}

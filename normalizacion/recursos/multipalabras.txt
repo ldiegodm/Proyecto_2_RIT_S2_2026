@@ -1,0 +1,48 @@
+# Expresiones de varias palabras que se convierten en un solo termino.
+# Formato: frase1 | frase2 | ... => termino_salida
+# Se aplica sobre el texto ya en minusculas, sin tildes y con guiones normalizados a "-".
+# Los espacios de la frase aceptan cualquier cantidad de espacio en blanco en el texto.
+# Se busca la frase completa (no dentro de otra palabra) y gana la frase mas larga.
+
+# --- Nombres binomiales y sus abreviaturas (genero + epiteto) ---
+tyrannosaurus rex | t. rex | t.rex | t rex | t-rex => tyrannosaurus_rex
+velociraptor mongoliensis | v. mongoliensis => velociraptor_mongoliensis
+triceratops horridus | t. horridus => triceratops_horridus
+stegosaurus stenops | s. stenops => stegosaurus_stenops
+brachiosaurus altithorax | b. altithorax => brachiosaurus_altithorax
+diplodocus carnegii | d. carnegii => diplodocus_carnegii
+archaeopteryx lithographica | a. lithographica => archaeopteryx_lithographica
+spinosaurus aegyptiacus | s. aegyptiacus => spinosaurus_aegyptiacus
+allosaurus fragilis | a. fragilis => allosaurus_fragilis
+iguanodon bernissartensis | i. bernissartensis => iguanodon_bernissartensis
+apatosaurus ajax | a. ajax => apatosaurus_ajax
+ankylosaurus magniventris | a. magniventris => ankylosaurus_magniventris
+parasaurolophus walkeri | p. walkeri => parasaurolophus_walkeri
+deinonychus antirrhopus | d. antirrhopus => deinonychus_antirrhopus
+compsognathus longipes | c. longipes => compsognathus_longipes
+giganotosaurus carolinii | g. carolinii => giganotosaurus_carolinii
+argentinosaurus huinculensis | a. huinculensis => argentinosaurus_huinculensis
+homo sapiens | h. sapiens => homo_sapiens
+
+# --- Eventos y limites geologicos (sus siglas llevan guion o barra) ---
+cretaceous-paleogene | cretaceous paleogene | cretaceous-palaeogene | cretaceous-tertiary | cretaceous tertiary | k-pg | k/pg | k-t | k/t | k-pg boundary | k-t boundary | kpg boundary | kt boundary => kpg
+permian-triassic | permian triassic | p-tr | p/tr | p-t => ptr
+triassic-jurassic | triassic jurassic | t-j | tr-j => trj
+
+# --- Terminos compuestos del dominio ---
+non-avian | non avian | nonavian => non_avian
+mass extinction | mass extinctions | mass-extinction => mass_extinction
+radiocarbon dating | carbon dating | carbon-14 dating | c-14 dating => radiocarbon_dating
+radiometric dating => radiometric_dating
+trace fossil | trace fossils | trace-fossil => trace_fossil
+natural history museum => natural_history_museum
+
+# --- Tesauro descriptivo (lenguaje escolar -> termino tecnico) ---
+bird-hipped | bird hipped => ornithischian
+lizard-hipped | lizard hipped => saurischian
+meat-eating | meat eating => carnivorous
+plant-eating | plant eating => herbivorous
+meat-eater | meat eater => carnivore
+meat-eaters | meat eaters => carnivores
+plant-eater | plant eater => herbivore
+plant-eaters | plant eaters => herbivores

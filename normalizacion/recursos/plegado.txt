@@ -1,0 +1,11 @@
+# Letras que no se separan en letra base + marca diacritica con NFD y se reemplazan a mano.
+# Formato: caracter => reemplazo
+ß => ss
+æ => ae
+œ => oe
+ø => o
+ł => l
+đ => d
+ð => d
+þ => th
+ı => i

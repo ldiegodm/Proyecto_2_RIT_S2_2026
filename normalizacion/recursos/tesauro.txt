@@ -1,0 +1,79 @@
+# Tesauro de terminos sueltos (un token -> un token).
+# Formato: forma1, forma2, ... => forma_canonica
+# Se aplica despues de quitar palabras vacias y antes de stemming/lematizacion,
+# por eso se listan las formas flexionadas que aparecen en el texto.
+# Objetivo: que variantes del mismo concepto compartan un solo termino en el vocabulario
+# (indice mas pequeno y mejor exhaustividad).
+
+# --- Ortografia britanica -> estadounidense (fuentes del Reino Unido: NHM, BBC, BGS) ---
+palaeontology => paleontology
+palaeontologist => paleontologist
+palaeontologists => paleontologists
+palaeontological => paleontological
+palaeobiology => paleobiology
+palaeobotany => paleobotany
+palaeoecology => paleoecology
+palaeoclimate => paleoclimate
+palaeoclimates => paleoclimates
+palaeoenvironment => paleoenvironment
+palaeoenvironments => paleoenvironments
+palaeozoic => paleozoic
+palaeogene => paleogene
+palaeocene => paleocene
+palaeontologia => paleontologia
+caenozoic, cainozoic => cenozoic
+aeon => eon
+aeons => eons
+fossilisation => fossilization
+fossilise => fossilize
+fossilised => fossilized
+fossilises => fossilizes
+fossilising => fossilizing
+mineralisation => mineralization
+mineralise => mineralize
+mineralised => mineralized
+colour => color
+colours => colors
+coloured => colored
+colouration => coloration
+behaviour => behavior
+behaviours => behaviors
+behavioural => behavioral
+centre => center
+centres => centers
+metre => meter
+metres => meters
+kilometre => kilometer
+kilometres => kilometers
+centimetre => centimeter
+centimetres => centimeters
+millimetre => millimeter
+millimetres => millimeters
+mould => mold
+moulds => molds
+analyse => analyze
+analysed => analyzed
+analysing => analyzing
+recognise => recognize
+recognised => recognized
+characterise => characterize
+characterised => characterized
+specialised => specialized
+organisation => organization
+organisations => organizations
+defence => defense
+defences => defenses
+grey => gray
+ageing => aging
+modelling => modeling
+travelled => traveled
+sulphur => sulfur
+aluminium => aluminum
+encyclopaedia => encyclopedia
+foetus => fetus
+
+# --- Sinonimos y formas coloquiales del dominio ---
+dino => dinosaur
+dinos => dinosaurs
+trex => tyrannosaurus_rex
+kt => kpg

@@ -1,0 +1,22 @@
+# Entradas de los casos golden: descripcion: texto. Un caso por linea; \n = salto de linea.
+# Despues de editar: python herramientas/generar_golden.py, REVISAR a mano pruebas/golden.tsv y commitear ambos.
+NFKC: the ﬁrst ﬂying reptile ﬁssure
+Typographic quotes: the dinosaur’s ‘skull’ wasn’t found
+PDF line break: fos-\nsils were pre-  \n  served in sedi-\nment
+Diacritics: Café, Ñandú, Æsir, straße, Łódź, naïve, Pokémon
+Possessive and contractions: the T. rex's teeth; they're sure it's Sue's skull; don't
+Tokenizer: 2.5cm long, version 1.2.3, fig.2, under_score, email@site.org, C++ and 3.14159
+Length: a b c dd x-ray I O
+Numbers: 1,500,000 bones and 66,000 years, 1,2,3 and 12,34
+Stopwords: The fossils of these animals are in the museum and they will be there
+Calendar dates: On 19 November 2026, on March 3rd, 1999, on 2020-02-03, in Sept. 2021 and in May 2010
+Invalid dates: 2020-13-45 and 32 march 2020 and may be 2020
+Geologic time: 66 million years ago, 66 Ma, 66mya, 145.5 million-year-old, 4.5 billion years old, 4.5 Ga, 12 thousand years ago, 12 ka
+Geologic false positives: 6 million people and 3 million dollars; mama; 10 maps
+Multiword: T. rex, T.rex, Tyrannosaurus  rex, T-rex and trex; the K–Pg boundary; K/T; Cretaceous–Paleogene extinction
+Multiword boundaries: atrex, at rex, mass extinctions, non-avian dinosaurs, a natural history museum
+Thesaurus: palaeontologists study colour, behaviour and moulds of dinos in the Palaeozoic
+School terms: bird-hipped and lizard-hipped, plant-eating and meat-eaters
+Protected genera: Triceratops, Iguanodon, Velociraptor, Archaeopteryx, Stegosaurus, Pachycephalosaurus
+Stemming and lemmas: fossils fossilized fossilization bones teeth mice lived living species studies evolved feathers
+Irregular forms: found ran saw left better geese children feet

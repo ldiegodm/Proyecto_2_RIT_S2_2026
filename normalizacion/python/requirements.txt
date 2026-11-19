@@ -1,0 +1,6 @@
+# Version fijada: debe coincidir con el Snowball que trae Lucene 9.12.1 (ver ESPECIFICACION.md, seccion 7)
+snowballstemmer==2.2.0
+# Solo para regenerar recursos/lemas_en.txt (herramientas/generar_lemas.py)
+nltk>=3.8
+# Pruebas
+pytest>=8.0

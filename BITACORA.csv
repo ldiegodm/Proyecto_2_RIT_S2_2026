@@ -1,0 +1,19 @@
+﻿fecha,autor,area,tipo,descripcion,archivos,estado
+2026-11-19,fboxMaran,General,Análisis,"Se leyó el enunciado del proyecto 2 y la documentación del proyecto 1. Colección: inglés, 29 406 docs, 0,343 GB, 460 523 formas; .txt en datos/repo y metadatos en datos/arana.db",-,Hecho
+2026-11-19,fboxMaran,General,Decisión,Indexador manual en Python (como el proyecto 1); indexador Lucene en Java. La normalización se implementa en ambos lados con los mismos archivos de configuración y recursos,-,Hecho
+2026-11-19,fboxMaran,Normalización,Creación,"Especificación del pipeline de 16 pasos con justificación, equivalencias en Lucene, limitaciones y bibliografía",normalizacion/ESPECIFICACION.md,Hecho
+2026-11-19,fboxMaran,Normalización,Creación,"3 perfiles en formato INI de Linux: p1_base (mínimo), p2_stemming (Porter2) y p3_completo (fechas, tiempo geológico, multipalabras, tesauro, lemas)",normalizacion/perfiles/*.conf,Hecho
+2026-11-19,fboxMaran,Normalización,Creación,"Recursos compartidos: stopwords de Lucene (33) y de Snowball (153, adaptada), tesauro GB/US y del dominio, multipalabras (binomiales, K-Pg), tabla de plegado",normalizacion/recursos/*,Hecho
+2026-11-19,fboxMaran,Normalización,Decisión,"Se quitaron de la lista de Snowball las contracciones que sin apóstrofo son palabras reales (she'll→shell, we'll→well, she'd→shed, etc.)",normalizacion/recursos/stopwords_snowball.txt,Hecho
+2026-11-19,fboxMaran,Normalización,Creación,Diccionario de lemas (134 747 entradas) generado desde WordNet 3.0 con flexiones regulares y excepciones,normalizacion/recursos/lemas_en.txt; normalizacion/herramientas/generar_lemas.py,Hecho
+2026-11-19,fboxMaran,Normalización,Creación,Normalizador en Python (paquete paleonorm) con API Normalizador.desde_archivo(conf).terminos(texto) y línea de comandos,normalizacion/python/paleonorm/*,Hecho
+2026-11-19,fboxMaran,Normalización,Creación,"PaleoAnalyzer para Lucene (Gradle, Java 21) que replica el mismo pipeline, y CLI Tokenizar",normalizacion/java/*,Hecho
+2026-11-19,fboxMaran,Normalización,Decisión,"Versiones fijadas: Lucene 9.12.1 + snowballstemmer 2.2.0. Lucene 10.x y snowballstemmer 3.x dan stems distintos (palaeontologists, added)",normalizacion/java/build.gradle; normalizacion/python/requirements.txt,Hecho
+2026-11-19,fboxMaran,Normalización,Pruebas,60 casos golden (20 reglas × 3 perfiles) que corren Python (63 pruebas) y Java (62 pruebas): todo pasa,normalizacion/pruebas/golden.tsv; normalizacion/pruebas/casos.txt; normalizacion/python/tests; normalizacion/java/src/test,Hecho
+2026-11-19,fboxMaran,Normalización,Pruebas,Verificación cruzada Python vs Lucene sobre 10 textos reales del proyecto 1 + casos golden: términos idénticos en los 3 perfiles,normalizacion/herramientas/verificar_equivalencia.py; normalizacion/herramientas/extraer_muestra.py,Hecho
+2026-11-19,fboxMaran,Normalización,Pendiente,Correr verificar_equivalencia.py sobre la colección completa (datos/ no está en esta máquina),-,Pendiente
+2026-11-19,fboxMaran,Normalización,Pendiente,Pasar ESPECIFICACION.md a la sección 'Políticas de normalización' del documento,-,Pendiente
+2026-11-19,fboxMaran,Indexador manual,Pendiente,"Indexador TF-IDF con archivo binario documentado y legible con hexdump -C. Debe usar paleonorm, no reimplementar la normalización",-,Pendiente
+2026-11-19,fboxMaran,Indexador Lucene,Pendiente,Indexador con Lucene 9.12.1 usando PaleoAnalyzer con cada perfil,-,Pendiente
+2026-11-19,fboxMaran,General,Pendiente,"Estadísticas de los 3 índices por indexador (tamaño, tiempo, vocabulario) y comparación de rendimiento y funcionamiento interno",-,Pendiente
+2026-11-19,fboxMaran,General,Creación,Bitácora del proyecto,BITACORA.csv; README.md,Hecho
